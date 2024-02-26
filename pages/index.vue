@@ -8,8 +8,6 @@ definePageMeta({
   title: 'Login'
 })
 
-const router = useRouter()
-
 const schema = toTypedSchema(
   yup.object({
     account: yup.string().required(),
@@ -38,7 +36,7 @@ const [password, passwordProps] = defineField('password', elPlusConfig);
 
 const onSubmit = handleSubmit((values) => {
   console.log('Submitted with', values);
-  router.push({ path: '/dashboard' })
+  navigateTo({ path: '/dashboard' })
 });
 
 </script>
